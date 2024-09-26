@@ -8,4 +8,4 @@ https://devonborthwick.github.io/leafletwebmap/weather/
 I also added earthquake data into the map, markers representing earthquake data with popup to display information.
 
 Another map showing earthquakes from the USGS.
-https://devonborthwick.github.io.leafletwebmap/earthquake/ 
+https://devonborthwick.github.io/leafletwebmap/earthquake/ 
