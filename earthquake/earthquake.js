@@ -14,9 +14,9 @@ $.getJSON(quakeUrl, function(data) {
     L.geoJSON(data, {
         style: function(feature){
             var alertColor = 'green';
-            {if (feature.properties.mag === '>1') pnt = 'green'};  
+            if (feature.properties.mag === '>1') alertColor = 'green';  
             return { color: alertColor };
-        }),
+        },
         onEachFeature: function(feature, layer) {
         layer.bindPopup(feature.properties.headline);
 
