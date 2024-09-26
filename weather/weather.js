@@ -1,8 +1,6 @@
 var map = L.map('weathermap').setView([38, -95], 4);
 var basemapUrl = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'; 
-    
-var basemap = L.tileLayer(basemapUrl, {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-});
+var basemap = L.tileLayer(basemapUrl, {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
 
 
 
@@ -25,7 +23,7 @@ $.getJSON(weatherAlertsUrl, function(data) {
             return { color: alertColor };
         },
         onEachFeature: function(feature, layer) {
-        layer.bindPopup(feature.properties.headline);
+            layer.bindPopup(feature.properties.headline);
 
         }
     }).addTo(map);
