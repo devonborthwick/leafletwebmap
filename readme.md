@@ -3,8 +3,9 @@
 ### Author: Devon Borthwick
 
 A map showing real-time weather radar and alerts from the National Weather Service.
-
+https://devonborthwick.github.io/leafletwebmap/weather/
 
 I also added earthquake data into the map, markers representing earthquake data with popup to display information.
 
 Another map showing earthquakes from the USGS.
+https.//devonborthwick.github.io.leafletwebmap/earthquake
