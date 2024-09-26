@@ -1,7 +1,8 @@
 var map = L.map('weathermap').setView([38, -95], 4);
-var basemapUrl = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'; 
-var basemap = L.tileLayer(basemapUrl, {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
-
+L.tileLayer('https://tile.opentopomap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
 
 
    
@@ -14,7 +15,9 @@ var radarDisplayOptions = {
 };
 var radar = L.tileLayer.wms(radarUrl, radarDisplayOptions).addTo(map);
 
-var weatherAlertsUrl = 'https://www.weather.gov/documentation/services-web-api#/default/get_alerts_active';
+
+var weatherAlertsUrl = 'https://api.weather.gov/alerts/active?region_type=land';
+
 $.getJSON(weatherAlertsUrl, function(data) {
     L.geoJSON(data, {
         style: function(feature){
