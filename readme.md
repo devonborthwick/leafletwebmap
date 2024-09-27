@@ -1,11 +1,14 @@
-# This will be an example of Assignment 4
+# This is my submission for Assignment 4
 ## Leaflet Web Map
 ### Author: Devon Borthwick
 
-A map showing real-time weather radar and alerts from the National Weather Service.
-https://devonborthwick.github.io/leafletwebmap/weather/
+This map shows real-time weather radar provided by Iowa State University Mesonet and alerts from the National Weather Service.
+Severe Weather is denoted by red polygons, while extreme weather is denoted by black polygons.
+
+<>https://devonborthwick.github.io/leafletwebmap/weather/<>
 
 I also added earthquake data into the map, markers representing earthquake data with popup to display information.
+The differing magnitudes of earthquakes is shown using colors, from blue to red.
 
-Another map showing earthquakes from the USGS.
-https://devonborthwick.github.io/leafletwebmap/earthquake/ 
+This map shows earthquakes using data from the USGS. Circle markers are used to show locations of earthquake around the world. When the marker is selected a popup appears that shows the magnitude, location, and time of the earthquake. The differing magnitudes of earthquakes is shown using colors.
+<>https://devonborthwick.github.io/leafletwebmap/earthquake/<>
