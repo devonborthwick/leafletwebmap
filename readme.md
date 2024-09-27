@@ -3,7 +3,7 @@
 ### Author: Devon Borthwick
 
 This map shows real-time weather radar provided by Iowa State University Mesonet and alerts from the National Weather Service.
-Severe Weather is denoted by red polygons, while extreme weather is denoted by black polygons.
+Severe Weather is denoted by red polygons, while extreme weather is denoted by black polygons. All other alerts are shown in orange.
 
 <>https://devonborthwick.github.io/leafletwebmap/weather/<>
 
