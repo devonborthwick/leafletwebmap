@@ -10,3 +10,5 @@ Severe Weather is denoted by red polygons, while extreme weather is denoted by b
 
 This map shows earthquakes using data from the USGS. Circle markers are used to show locations of earthquake around the world. When the marker is selected a popup appears that shows the magnitude, location, and time of the earthquake. The differing magnitudes of earthquakes is shown using colors, from blue to red.
 <>https://devonborthwick.github.io/leafletwebmap/earthquake/<>
+
+Both of these maps use a topo basemap from openstreetmaps. 
