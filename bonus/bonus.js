@@ -1,3 +1,4 @@
+
 var map = L.map('bonusmap').setView([38, -95], 4);
 L.tileLayer('https://tile.opentopomap.org/{z}/{x}/{y}.png', {
     maxZoom: 17,
@@ -6,7 +7,7 @@ L.tileLayer('https://tile.opentopomap.org/{z}/{x}/{y}.png', {
 
 var weatherAlertsUrl = 'https://api.weather.gov/alerts/active?region_type=land';
 
-$.getJSON(weatherAlertsUrl, function(data) {
+var alerts = $.getJSON(weatherAlertsUrl, function(data) {
     L.geoJSON(data, {
         style: function(feature){
             var alertColor = 'orange';
@@ -18,14 +19,13 @@ $.getJSON(weatherAlertsUrl, function(data) {
             layer.bindPopup(feature.properties.headline);
 
         }
-    }).addTo(map);
+    }).addTo(map)
 });
 
 var quakeUrl = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson';
 
-$.getJSON(quakeUrl, function(json) {
-
-   L.geoJson(json, {
+var quake = $.getJSON(quakeUrl, function(json) {
+     L.geoJson( json,{
   
       style: function(feature) {
         var mag = feature.properties.mag;
@@ -63,11 +63,11 @@ $.getJSON(quakeUrl, function(json) {
         layer.bindPopup(popupText);
       },
   
-      pointToLayer: function(feature, latlng) {
+     pointToLayer: function(feature, latlng) {
         return L.circleMarker(latlng);
       },
-    }).addTo(map);
-  });
+    }).addTo(map)
+});
 
   var legend = L.control({ position: "bottomleft" });
 
@@ -85,9 +85,12 @@ $.getJSON(quakeUrl, function(json) {
   
   legend.addTo(map);
 
-  var overlays = {
-    'Earthquakes': quakeUrl, legend, 
-    'Weather Alerts': weatherAlertsUrl};
- 
 
-  L.control.layers(overlays).addTo(map);
+  
+
+var layerControl = L.control.layers( {
+    "Earthquakes": quake,
+    "Weather Alerts": alerts
+},  {collapsed: false}).addTo(map);
+
+layerControl.addOverlay(quake, alerts);
