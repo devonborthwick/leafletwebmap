@@ -1,4 +1,4 @@
-var map = L.map('weathermap').setView([38, -95], 4);
+var map = L.map('bonusmap').setView([38, -95], 4);
 L.tileLayer('https://tile.opentopomap.org/{z}/{x}/{y}.png', {
     maxZoom: 17,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -84,3 +84,10 @@ $.getJSON(quakeUrl, function(json) {
   };
   
   legend.addTo(map);
+
+  var overlays = {
+    'Earthquakes': quakeUrl, legend, 
+    'Weather Alerts': weatherAlertsUrl};
+ 
+
+  L.control.layers(overlays).addTo(map);
